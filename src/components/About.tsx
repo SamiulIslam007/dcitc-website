@@ -1,0 +1,36 @@
+import React from 'react';
+import { MISSION_STATEMENT } from '../constants';
+import SectionTitle from './UI/SectionTitle';
+
+const About: React.FC = () => {
+  return (
+    <section id="about" className="py-24 bg-black relative border-t border-white/5">
+      <div className="max-w-4xl mx-auto px-6 relative z-10">
+        <SectionTitle title="Mission Protocol" subtitle="Core objectives of the DCITC initiative" />
+        
+        <div className="glass-panel p-8 md:p-12 border-l-4 border-l-white relative overflow-hidden group">
+          <div className="absolute top-0 right-0 p-4 opacity-20">
+            <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0 0H100V100H0V0Z" fill="url(#grid-pattern)" />
+              <defs>
+                <pattern id="grid-pattern" width="10" height="10" patternUnits="userSpaceOnUse">
+                  <path d="M10 0L0 0L0 10" fill="none" stroke="white" strokeWidth="0.5"/>
+                </pattern>
+              </defs>
+            </svg>
+          </div>
+
+          <p className="font-rajdhani text-xl md:text-3xl text-center leading-relaxed text-slate-200">
+            <span className="text-4xl text-slate-600 font-serif absolute top-8 left-8">"</span>
+            {MISSION_STATEMENT}
+            <span className="text-4xl text-slate-600 font-serif absolute bottom-8 right-8">"</span>
+          </p>
+
+          <div className="absolute top-0 left-0 w-full h-1 bg-white/20 blur-sm animate-[scan_3s_linear_infinite] opacity-0 group-hover:opacity-100 transition-opacity"></div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default About;
