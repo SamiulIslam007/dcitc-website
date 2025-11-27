@@ -1,10 +1,10 @@
 "use client";
-import React, { useState, useEffect } from 'react';
-import Image from 'next/image';
-import { Menu, X, Hexagon } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { NAV_ITEMS, CLUB_SHORT } from '../constants';
-import ApplyNowModal from './ApplyNowModal';
+import React, { useState, useEffect } from "react";
+import Image from "next/image";
+import { Menu, X, Hexagon } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { NAV_ITEMS, CLUB_SHORT } from "../constants";
+import ApplyNowModal from "./ApplyNowModal";
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,22 +15,29 @@ const Navbar: React.FC = () => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <nav 
+    <nav
       className={`bg-black fixed w-full z-50 transition-all duration-300 ${
-        scrolled ? 'py-4 glass-panel border-b border-white/10' : 'py-6 bg-transparent'
+        scrolled
+          ? "py-4 glass-panel border-b border-white/10"
+          : "py-6 bg-transparent"
       }`}
     >
-        <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
+      <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         <a href="#" className="flex items-center gap-3 group">
           <div className="relative w-12 h-12">
-            <Image src="/logo.png" alt="{CLUB_SHORT} Logo" width={200} height={200} priority />
+            <Image
+              src="/logo.png"
+              alt="{CLUB_SHORT} Logo"
+              width={200}
+              height={200}
+              priority
+            />
           </div>
-
         </a>
 
         {}
@@ -46,16 +53,18 @@ const Navbar: React.FC = () => {
             </a>
           ))}
           <button
-             type="button"
-             onClick={() => setApplyOpen(true)}
-             className="px-6 py-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-orbitron text-sm tracking-wider rounded-none backdrop-blur-sm transition-all hover:shadow-[0_0_15px_rgba(255,255,255,0.3)] -skew-x-10"
+            type="button"
+            onClick={() => setApplyOpen(true)}
+            className="px-6 py-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-orbitron text-sm tracking-wider rounded-none backdrop-blur-sm transition-all hover:shadow-[0_0_15px_rgba(255,255,255,0.3)] -skew-x-10"
           >
-            <span className="skew-x-10 inline-block">APPLY NOW</span>
+            <span className="skew-x-10 inline-block cursor-pointer">
+              APPLY NOW
+            </span>
           </button>
         </div>
 
         {}
-        <button 
+        <button
           className="md:hidden text-white"
           onClick={() => setIsOpen(!isOpen)}
         >
@@ -68,7 +77,7 @@ const Navbar: React.FC = () => {
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
+            animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden glass-panel border-t border-white/10 overflow-hidden"
           >
