@@ -1,12 +1,11 @@
 import React from "react";
 import { CLUB_NAME, FOUNDED } from "../constants";
-import { Facebook, Github, Twitter, Linkedin, Mail } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Mail } from "lucide-react";
 
 const Footer: React.FC = () => {
   const socialLinks = [
     { icon: Facebook, href: "https://www.facebook.com/DCITC" },
-    // { icon: Github, href: "https://github.com/yourusername" },
-    // { icon: Twitter, href: "https://twitter.com/yourusername" },
+    { icon: Instagram, href: "https://www.instagram.com/dcitc_official/" },
     {
       icon: Linkedin,
       href: "https://www.linkedin.com/company/dhaka-college-it-club/",
