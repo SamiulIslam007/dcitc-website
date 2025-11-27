@@ -1,15 +1,21 @@
 "use client";
-import React from 'react';
-import Image from 'next/image';
-import { motion } from 'framer-motion';
-import SectionTitle from './UI/SectionTitle';
-import { LEADERSHIP_MEMBERS, LEADERSHIP_SUBTITLE, LEADERSHIP_EXEC_LABEL, LEADERSHIP_CHIEF_LABEL, LEADERSHIP_JOINT_LABEL } from '../constants';
-import { LeadershipMember } from '../types';
+import React from "react";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import SectionTitle from "./UI/SectionTitle";
+import {
+  LEADERSHIP_MEMBERS,
+  LEADERSHIP_SUBTITLE,
+  LEADERSHIP_EXEC_LABEL,
+  LEADERSHIP_CHIEF_LABEL,
+  LEADERSHIP_JOINT_LABEL,
+} from "../constants";
+import { LeadershipMember } from "../types";
 
 const Leadership: React.FC = () => {
-  const executives = LEADERSHIP_MEMBERS.filter(m => m.tier === 'executive');
-  const chiefs = LEADERSHIP_MEMBERS.filter(m => m.tier === 'chief');
-  const joints = LEADERSHIP_MEMBERS.filter(m => m.tier === 'joint');
+  const executives = LEADERSHIP_MEMBERS.filter((m) => m.tier === "executive");
+  const chiefs = LEADERSHIP_MEMBERS.filter((m) => m.tier === "chief");
+  const joints = LEADERSHIP_MEMBERS.filter((m) => m.tier === "joint");
 
   const cardVariants = {
     hidden: { opacity: 0, y: 30 },
@@ -19,16 +25,24 @@ const Leadership: React.FC = () => {
       transition: {
         delay: i * 0.1,
         duration: 0.5,
-        ease: "easeOut" as const
-      }
-    })
+        ease: "easeOut" as const,
+      },
+    }),
   };
 
-  const LeaderCard = ({ member, index, size = 'normal' }: { member: LeadershipMember; index: number; size?: 'large' | 'normal' | 'small' }) => {
+  const LeaderCard = ({
+    member,
+    index,
+    size = "normal",
+  }: {
+    member: LeadershipMember;
+    index: number;
+    size?: "large" | "normal" | "small";
+  }) => {
     const sizeClasses = {
-      large: 'w-48 h-48 md:w-56 md:h-56',
-      normal: 'w-40 h-40 md:w-48 md:h-48',
-      small: 'w-36 h-36 md:w-40 md:h-40'
+      large: "w-48 h-48 md:w-56 md:h-56",
+      normal: "w-40 h-40 md:w-48 md:h-48",
+      small: "w-36 h-36 md:w-40 md:h-40",
     };
 
     return (
@@ -43,13 +57,22 @@ const Leadership: React.FC = () => {
         {}
         <div className={`relative ${sizeClasses[size]} mb-4 overflow-hidden`}>
           {}
-          <div className="absolute inset-0 border border-white/10 group-hover:border-white/40 transition-all duration-500 bg-linear-to-br from-white/5 to-transparent" 
-               style={{ clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)' }}>
-          </div>
-          
+          <div
+            className="absolute inset-0 border border-white/10 group-hover:border-white/40 transition-all duration-500 bg-linear-to-br from-white/5 to-transparent"
+            style={{
+              clipPath:
+                "polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)",
+            }}
+          ></div>
+
           {}
-          <div className="absolute inset-2 overflow-hidden"
-               style={{ clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)' }}>
+          <div
+            className="absolute inset-2 overflow-hidden"
+            style={{
+              clipPath:
+                "polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)",
+            }}
+          >
             <Image
               src={member.image}
               alt={`${member.name} - ${member.role}`}
@@ -84,57 +107,75 @@ const Leadership: React.FC = () => {
   };
 
   return (
-    <section id="leadership" className="py-24 bg-black relative overflow-hidden">
+    <section
+      id="leadership"
+      className="py-24 bg-black relative overflow-hidden"
+    >
       {}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" style={{
-          backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
-          backgroundSize: '50px 50px'
-        }}></div>
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
+            backgroundSize: "50px 50px",
+          }}
+        ></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <SectionTitle 
-          title="Leadership" 
-          subtitle={LEADERSHIP_SUBTITLE}
-        />
+        <SectionTitle title="Leadership" subtitle={LEADERSHIP_SUBTITLE} />
 
         {}
         <div className="mb-16">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             className="flex justify-center items-center mb-8"
           >
             <div className="h-px w-16 bg-linear-to-r from-transparent to-white/30"></div>
-            <span className="px-4 font-orbitron text-xs tracking-[0.3em] text-slate-500 uppercase">{LEADERSHIP_EXEC_LABEL}</span>
+            <span className="px-4 font-orbitron text-xs tracking-[0.3em] text-slate-500 uppercase">
+              {LEADERSHIP_EXEC_LABEL}
+            </span>
             <div className="h-px w-16 bg-linear-to-l from-transparent to-white/30"></div>
           </motion.div>
-          
+
           <div className="flex flex-wrap justify-center gap-8 md:gap-16">
             {executives.map((member, index) => (
-              <LeaderCard key={member.image} member={member} index={index} size="large" />
+              <LeaderCard
+                key={member.image}
+                member={member}
+                index={index}
+                size="large"
+              />
             ))}
           </div>
         </div>
 
         {}
         <div className="mb-16">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             className="flex justify-center items-center mb-8"
           >
             <div className="h-px w-16 bg-linear-to-r from-transparent to-white/20"></div>
-            <span className="px-4 font-orbitron text-xs tracking-[0.3em] text-slate-600 uppercase">{LEADERSHIP_CHIEF_LABEL}</span>
+            <span className="px-4 font-orbitron text-xs tracking-[0.3em] text-slate-600 uppercase">
+              {LEADERSHIP_CHIEF_LABEL}
+            </span>
             <div className="h-px w-16 bg-linear-to-l from-transparent to-white/20"></div>
           </motion.div>
-          
+
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 md:gap-10 justify-items-center">
             {chiefs.map((member, index) => (
-              <LeaderCard key={member.image} member={member} index={index + executives.length} size="normal" />
+              <LeaderCard
+                key={member.image}
+                member={member}
+                index={index + executives.length}
+                size="normal"
+              />
             ))}
           </div>
         </div>
@@ -142,20 +183,27 @@ const Leadership: React.FC = () => {
         {}
         {joints.length > 0 && (
           <div>
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               className="flex justify-center items-center mb-8"
             >
               <div className="h-px w-16 bg-linear-to-r from-transparent to-white/10"></div>
-              <span className="px-4 font-orbitron text-xs tracking-[0.3em] text-slate-700 uppercase">{LEADERSHIP_JOINT_LABEL}</span>
+              <span className="px-4 font-orbitron text-xs tracking-[0.3em] text-slate-700 uppercase">
+                {LEADERSHIP_JOINT_LABEL}
+              </span>
               <div className="h-px w-16 bg-linear-to-l from-transparent to-white/10"></div>
             </motion.div>
-            
+
             <div className="flex flex-wrap justify-center gap-6 md:gap-10">
               {joints.map((member, index) => (
-                <LeaderCard key={member.image} member={member} index={index + executives.length + chiefs.length} size="small" />
+                <LeaderCard
+                  key={member.image}
+                  member={member}
+                  index={index + executives.length + chiefs.length}
+                  size="small"
+                />
               ))}
             </div>
           </div>

@@ -22,7 +22,7 @@ const ApplyNowModal: React.FC<ApplyNowModalProps> = ({ open, onClose }) => {
             animate={{ scale: 1, opacity: 1, y: 0 }}
             exit={{ scale: 0.9, opacity: 0, y: 20 }}
             transition={{ duration: 0.2 }}
-            className="w-full max-w-md bg-dc-panel border border-white/10 p-6 md:p-8 relative"
+            className="w-full sm:max-w-sm md:max-w-md bg-dc-panel border border-white/10 p-5 sm:p-6 md:p-8 relative rounded-lg"
           >
             <button
               onClick={onClose}
@@ -31,15 +31,12 @@ const ApplyNowModal: React.FC<ApplyNowModalProps> = ({ open, onClose }) => {
               Close
             </button>
 
-            <h2 className="text-2xl md:text-3xl font-orbitron text-white mb-3">
-              Apply to DCITC
-            </h2>
-            <p className="font-rajdhani text-slate-400 text-sm md:text-base mb-6">
-              This is a demo modal. In the real site, this would contain the
-              application form or an external link to your application portal.
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-orbitron text-white mb-3">Apply to DCITC</h2>
+            <p className="font-rajdhani text-slate-400 text-sm sm:text-sm md:text-base mb-6">
+              This is a demo modal. In the real site, this would contain the application form or an external link to your application portal.
             </p>
 
-            <div className="space-y-3 text-sm font-rajdhani text-slate-300">
+            <div className="space-y-3 text-sm sm:text-sm md:text-sm font-rajdhani text-slate-300">
               <p>Demo instructions:</p>
               <ul className="list-disc list-inside space-y-1 text-slate-400">
                 <li>Collect basic info (Name, Class, Contact).</li>
