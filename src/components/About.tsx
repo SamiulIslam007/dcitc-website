@@ -1,7 +1,6 @@
-
-import React from 'react';
-import { MISSION_STATEMENT } from '../constants';
-import SectionTitle from './UI/SectionTitle';
+import React from "react";
+import { MISSION_STATEMENT } from "../constants";
+import SectionTitle from "./UI/SectionTitle";
 
 const About: React.FC = () => {
   return (
@@ -27,17 +26,39 @@ const About: React.FC = () => {
             >
               <path d="M0 0H100V100H0V0Z" fill="url(#grid-pattern)" />
               <defs>
-                <pattern id="grid-pattern" width="10" height="10" patternUnits="userSpaceOnUse">
-                  <path d="M10 0L0 0L0 10" fill="none" stroke="white" strokeWidth="0.5" />
+                <pattern
+                  id="grid-pattern"
+                  width="10"
+                  height="10"
+                  patternUnits="userSpaceOnUse"
+                >
+                  <path
+                    d="M10 0L0 0L0 10"
+                    fill="none"
+                    stroke="white"
+                    strokeWidth="0.5"
+                  />
                 </pattern>
               </defs>
             </svg>
           </div>
 
-          <p className="font-rajdhani text-base sm:text-lg md:text-2xl lg:text-3xl text-center leading-relaxed text-slate-200 relative px-4 sm:px-6">
-            <span className="text-3xl sm:text-4xl md:text-5xl font-serif text-slate-500 mr-1">"</span>
-            {MISSION_STATEMENT}
-            <span className="text-3xl sm:text-4xl md:text-5xl font-serif text-slate-500 ml-1">"</span>
+          <p className="font-rajdhani text-xl sm:text-2xl md:text-3xl lg:text-4xl text-center leading-normal sm:leading-relaxed text-slate-200 relative px-4 sm:px-6">
+            <span
+              className="text-3xl sm:text-4xl md:text-5xl font-serif text-slate-500 absolute top-0 left-0 sm:left-4 md:left-6 leading-none"
+              style={{ transform: "translateY(-0.5rem)" }}
+            >
+              "
+            </span>
+
+            <span className="inline-block px-2">{MISSION_STATEMENT}</span>
+
+            <span
+              className="text-3xl sm:text-4xl md:text-5xl font-serif text-slate-500 absolute bottom-0 right-0 sm:right-4 md:right-6 leading-none"
+              style={{ transform: "translateY(0.5rem)" }}
+            >
+              "
+            </span>
           </p>
 
           <div className="absolute top-0 left-0 w-full h-1 bg-white/20 blur-sm animate-[scan_3s_linear_infinite] opacity-0 group-hover:opacity-100 transition-opacity"></div>
