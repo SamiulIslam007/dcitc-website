@@ -12,7 +12,6 @@ const Hero: React.FC = () => {
       id="hero"
       className="relative min-h-screen sm:pb-10 flex items-center justify-center overflow-hidden bg-black pt-16 sm:pt-20"
     >
-      {/* Grid Background */}
       <div className="absolute inset-0 bg-size-[50px_50px] bg-tech-grid opacity-20 pointer-events-none"></div>
       <div className="absolute inset-0 bg-linear-to-b from-transparent via-transparent to-black pointer-events-none"></div>
 
@@ -150,7 +149,7 @@ const Hero: React.FC = () => {
       </div>
 
       <motion.div
-        className="absolute bottom-6 sm:bottom-2 left-1/2 -translate-x-1/2 text-slate-500 flex flex-col items-center gap-2"
+        className="absolute bottom-4 sm:bottom-2 left-1/2 -translate-x-1/2 text-slate-500 flex flex-col items-center gap-2 z-30"
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
       >
