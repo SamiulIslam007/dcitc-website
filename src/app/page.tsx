@@ -1,9 +1,9 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
-import Domains from "@/components/Domains";
-import Departments from "@/components/Departments";
-import Leadership from "@/components/Leadership";
+import Domains from "@/components/Domains/Domains";
+import Departments from "@/components/Departments/Departments";
+import Leadership from "@/components/Leadership/Leadership";
 import Achievements from "@/components/Achievements";
 import BlogPreview from "@/components/BlogPreview";
 import Footer from "@/components/Footer";
@@ -22,7 +22,6 @@ export default function Home() {
         <Achievements />
         <BlogPreview />
         <CTASection />
-
       </main>
       <Footer />
     </div>

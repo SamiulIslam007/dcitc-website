@@ -1,6 +1,9 @@
 import React from "react";
-import { CLUB_NAME, FOUNDED } from "../constants";
+import Constants from "../constants";
 import { Facebook, Instagram, Linkedin, Mail } from "lucide-react";
+
+const CLUB_NAME: string = Constants.CLUB.NAME;
+const FOUNDED: string = Constants.CLUB.FOUNDED;
 
 const Footer: React.FC = () => {
   const socialLinks = [
@@ -32,21 +35,19 @@ const Footer: React.FC = () => {
               Connect
             </h4>
             <div className="flex gap-4">
-              {
-                <div className="flex gap-4">
-                  {socialLinks.map(({ icon: Icon, href }, i) => (
-                    <a
-                      key={i}
-                      href={href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-10 h-10 flex items-center justify-center border border-slate-700 rounded hover:bg-white hover:text-black hover:border-white transition-all duration-300 text-slate-400"
-                    >
-                      <Icon className="w-5 h-5" />
-                    </a>
-                  ))}
-                </div>
-              }
+              <div className="flex gap-4">
+                {socialLinks.map(({ icon: Icon, href }, i) => (
+                  <a
+                    key={i}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 flex items-center justify-center border border-slate-700 rounded hover:bg-white hover:text-black hover:border-white transition-all duration-300 text-slate-400"
+                  >
+                    <Icon className="w-5 h-5" />
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
         </div>

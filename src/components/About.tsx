@@ -1,6 +1,8 @@
 import React from "react";
-import { MISSION_STATEMENT } from "../constants";
+import Constants from "../constants";
 import SectionTitle from "./UI/SectionTitle";
+
+const MISSION_STATEMENT: string = Constants.CLUB.MISSION.STATEMENT;
 
 const About: React.FC = () => {
   return (

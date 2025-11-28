@@ -15,7 +15,7 @@ const CTASection: React.FC = () => {
         <p className="text-slate-400 font-rajdhani text-base sm:text-xl mb-8 sm:mb-10 max-w-xl mx-auto px-4">
           Join the elite tech enthusiasts of Dhaka College.
         </p>
-        <button className="px-8 sm:px-12 py-4 sm:py-5 bg-white text-black font-orbitron font-bold text-base sm:text-lg tracking-wider hover:scale-105 transition-transform -skew-x-10">
+        <button className="px-8 sm:px-12 py-4 sm:py-5 bg-white text-black font-orbitron font-bold text-base cursor-pointer sm:text-lg tracking-wider hover:scale-105 transition-transform -skew-x-10">
           <span className="skew-x-10">APPLY NOW</span>
         </button>
       </div>

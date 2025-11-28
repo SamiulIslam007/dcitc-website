@@ -1,25 +1,34 @@
 import { LucideIcon } from "lucide-react";
 
-export interface NavItem {
-  label: string;
-  href: string;
-}
+const TYPES = {
+  NavItem: {} as {
+    label: string;
+    href: string;
+  },
 
-export interface DomainFeature {
-  title: string;
-  description: string;
-  icon: LucideIcon;
-  color: string;
-}
+  DomainFeature: {} as {
+    title: string;
+    description: string;
+    icon: LucideIcon;
+    color: string;
+  },
 
-export interface StatItem {
-  value: string;
-  label: string;
-}
+  StatItem: {} as {
+    value: string;
+    label: string;
+  },
 
-export interface LeadershipMember {
-  name: string;
-  role: string;
-  image: string;
-  tier: 'executive' | 'chief' | 'joint';
-}
+  LeadershipMember: {} as {
+    name: string;
+    role: string;
+    image: string;
+    tier: "executive" | "chief" | "joint";
+  },
+};
+
+export type NavItem = typeof TYPES.NavItem;
+export type DomainFeature = typeof TYPES.DomainFeature;
+export type StatItem = typeof TYPES.StatItem;
+export type LeadershipMember = typeof TYPES.LeadershipMember;
+
+export default TYPES;
