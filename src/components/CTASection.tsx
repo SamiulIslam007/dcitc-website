@@ -5,12 +5,7 @@ const CTASection: React.FC = () => {
   return (
     <section
       id="join"
-      className="
-        py-20 sm:py-32 
-        relative overflow-hidden 
-        flex items-center justify-center 
-        border-t border-white/5
-      "
+      className="py-20 sm:py-32 relative overflow-hidden flex items-center justify-center border-t border-white/5"
     >
       <div className="absolute inset-0 bg-white/5"></div>
 
@@ -23,24 +18,7 @@ const CTASection: React.FC = () => {
           Join the elite tech enthusiasts of Dhaka College.
         </p>
 
-        <button
-          className="
-    group
-    relative inline-flex items-center justify-center
-    px-12 py-5
-    font-orbitron font-bold tracking-wider text-lg
-    text-[#0A0A0A]
-    bg-[#F3DF6C]
-    -skew-x-12
-    shadow-[0_0_25px_rgba(243,223,108,0.35)]
-    transition-all duration-300 ease-out
-    hover:shadow-[0_0_40px_rgba(243,223,108,0.55)]
-    hover:bg-[#FFE97F]
-    active:scale-[0.97]
-    mb-16
-    cursor-pointer
-  "
-        >
+        <button className=" group relative inline-flex items-center justify-center px-12 py-5 font-orbitron font-bold tracking-wider text-lg text-[#0A0A0A] bg-[#F3DF6C] -skew-x-12 shadow-[0_0_25px_rgba(243,223,108,0.35)] transition-all duration-300 ease-out hover:shadow-[0_0_40px_rgba(243,223,108,0.55)] hover:bg-[#FFE97F] active:scale-[0.97] mb-16 cursor-pointer">
           <span className="skew-x-12">APPLY NOW</span>
         </button>
       </div>

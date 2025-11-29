@@ -1,10 +1,8 @@
 "use client";
 import React from "react";
-import Constants from "../constants";
+import { DEMO_ACHIEVEMENTS } from "../constants";
 import { motion } from "framer-motion";
 import SectionTitle from "./UI/SectionTitle";
-
-const DEMO_ACHIEVEMENTS = Constants.DEMO_ACHIEVEMENTS;
 
 const Achievements: React.FC = () => {
   return (
