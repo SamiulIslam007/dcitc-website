@@ -1,5 +1,5 @@
 import { Terminal, Cpu, ShieldCheck, BrainCircuit } from "lucide-react";
-import { NavItem, DomainFeature } from "./types";
+import { NavItem, DomainFeature, Achievement } from "./types";
 
 const CLUB = {
   NAME: "Dhaka College Information & Technology Club",
@@ -17,7 +17,7 @@ const NAV_ITEMS: NavItem[] = [
   { label: "Domains", href: "#domains" },
   { label: "Departments", href: "#departments" },
   { label: "Leadership", href: "#leadership" },
-  { label: "Achievements", href: "#achievements" },
+  { label: "Achievements", href: "/achievements" },
   { label: "Intel", href: "#intel" },
 ];
 
@@ -148,7 +148,7 @@ const LEADERSHIP = {
   },
 };
 
-const DEMO_ACHIEVEMENTS = [
+export const DEMO_ACHIEVEMENTS: Achievement[] = [
   {
     year: "2025",
     title: "National Robotics Championship Finalist",
@@ -209,6 +209,5 @@ export default {
   DOMAINS,
   DEPARTMENTS,
   LEADERSHIP,
-  DEMO_ACHIEVEMENTS,
   DEMO_BLOG_POSTS,
 };
