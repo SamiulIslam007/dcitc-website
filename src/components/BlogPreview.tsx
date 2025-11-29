@@ -63,7 +63,7 @@ const BlogPreview: React.FC = () => {
           href="#"
           className="px-8 py-3 border-2 border-white/30 text-white font-orbitron font-bold tracking-wider hover:bg-white/10 transition-colors duration-300 -skew-x-12 inline-flex"
         >
-          View All Blogs
+          View All Intel
         </a>
       </div>
     </MotionSection>
