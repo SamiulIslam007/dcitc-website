@@ -79,7 +79,6 @@ const Hero: React.FC = () => {
 
             <p className="text-slate-400 font-rajdhani text-base sm:text-lg mb-6 tracking-wide max-w-lg mx-auto px-2">
               {CLUB_NAME}
-              {/* {MOTTO} যদি ব্যবহার করতে চান */}
             </p>
 
             <CTAButtons />
