@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import CONSTANTS from "../constants";
+import { NAV_ITEMS, CLUB } from "../constants";
 import ApplyNowModal from "./modals/ApplyNowModal";
 
 const Logo: React.FC = () => (
@@ -11,7 +11,7 @@ const Logo: React.FC = () => (
     <div className="relative w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 transition-all duration-300">
       <Image
         src="/logo.png"
-        alt={`${CONSTANTS.CLUB.SHORT} Logo`}
+        alt={`${CLUB.SHORT} Logo`}
         width={200}
         height={200}
         priority
@@ -27,7 +27,7 @@ interface DesktopNavProps {
 
 const DesktopNav: React.FC<DesktopNavProps> = ({ onApplyClick }) => (
   <div className="hidden md:flex items-center gap-8">
-    {CONSTANTS.NAV_ITEMS.map((item) => (
+    {NAV_ITEMS.map((item) => (
       <a
         key={item.label}
         href={item.href}
@@ -94,7 +94,7 @@ const MobileNavMenu: React.FC<MobileNavMenuProps> = ({
     className="md:hidden fixed left-0 w-full bg-black border-t border-white/10 shadow-xl overflow-y-auto"
   >
     <div className="flex flex-col p-6 gap-6">
-      {CONSTANTS.NAV_ITEMS.map((item) => (
+      {NAV_ITEMS.map((item) => (
         <a
           key={item.label}
           href={item.href}

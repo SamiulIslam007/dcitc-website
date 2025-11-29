@@ -3,11 +3,11 @@ import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
-import Constants from "../constants";
+import { CLUB } from "../constants";
 import CTAButtons from "./CTAButtons";
 
-const CLUB_NAME: string = Constants.CLUB.NAME;
-const FOUNDED: string = Constants.CLUB.FOUNDED;
+const CLUB_NAME: string = CLUB.NAME;
+const FOUNDED: string = CLUB.FOUNDED;
 
 const Hero: React.FC = () => {
   return (

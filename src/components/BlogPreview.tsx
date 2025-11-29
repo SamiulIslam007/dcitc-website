@@ -1,11 +1,9 @@
 "use client";
 
 import React from "react";
-import Constants from "../constants";
+import { DEMO_BLOG_POSTS } from "../constants";
 import MotionSection from "./MotionSection";
 import { motion } from "framer-motion";
-
-const DEMO_BLOG_POSTS = Constants.DEMO_BLOG_POSTS;
 
 const BlogPreview: React.FC = () => {
   return (

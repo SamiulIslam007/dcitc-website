@@ -1,7 +1,7 @@
 import { Terminal, Cpu, ShieldCheck, BrainCircuit } from "lucide-react";
 import { NavItem, DomainFeature, Achievement } from "./types";
 
-const CLUB = {
+export const CLUB = {
   NAME: "Dhaka College Information & Technology Club",
   SHORT: "DCITC",
   MOTTO: "Shaping Tomorrow Today",
@@ -13,7 +13,7 @@ const CLUB = {
   },
 };
 
-const NAV_ITEMS: NavItem[] = [
+export const NAV_ITEMS: NavItem[] = [
   { label: "Domains", href: "#domains" },
   { label: "Departments", href: "#departments" },
   { label: "Leadership", href: "#leadership" },
@@ -21,7 +21,7 @@ const NAV_ITEMS: NavItem[] = [
   { label: "Intel", href: "#intel" },
 ];
 
-const DOMAINS: DomainFeature[] = [
+export const DOMAINS: DomainFeature[] = [
   {
     title: "Robotics",
     description:
@@ -52,7 +52,7 @@ const DOMAINS: DomainFeature[] = [
   },
 ];
 
-const DEPARTMENTS: DomainFeature[] = [
+export const DEPARTMENTS: DomainFeature[] = [
   {
     title: "Content Writing & Publication Department",
     description:
@@ -83,7 +83,7 @@ const DEPARTMENTS: DomainFeature[] = [
   },
 ];
 
-const LEADERSHIP = {
+export const LEADERSHIP = {
   MEMBERS: [
     {
       name: "M M Mushfiq Bin Musa",
@@ -170,7 +170,7 @@ export const DEMO_ACHIEVEMENTS: Achievement[] = [
   },
 ];
 
-const DEMO_BLOG_POSTS = [
+export const DEMO_BLOG_POSTS = [
   {
     slug: "getting-started-with-dcitc",
     title: "Getting Started with DCITC",
@@ -202,12 +202,3 @@ const DEMO_BLOG_POSTS = [
       "This is a demo article describing the cybersecurity mindset of the club. Swap this text for real write-ups later.",
   },
 ];
-
-export default {
-  CLUB,
-  NAV_ITEMS,
-  DOMAINS,
-  DEPARTMENTS,
-  LEADERSHIP,
-  DEMO_BLOG_POSTS,
-};

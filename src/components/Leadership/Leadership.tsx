@@ -3,10 +3,9 @@ import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import SectionTitle from "../UI/SectionTitle";
-import Constants from "../../constants";
+import { LEADERSHIP } from "../../constants";
 import { LeadershipMember } from "../../types";
 
-const { LEADERSHIP } = Constants;
 const LEADERSHIP_MEMBERS: LeadershipMember[] =
   LEADERSHIP.MEMBERS as LeadershipMember[];
 const LEADERSHIP_SUBTITLE: string = LEADERSHIP.SUBTITLE;
