@@ -9,7 +9,7 @@ const BlogPreview: React.FC = () => {
   return (
     <MotionSection
       id="intel"
-      title="Blogs"
+      title="Intel"
       subtitle="Latest Insights from the DCITC"
       className="py-24 bg-dc-dark relative"
     >
