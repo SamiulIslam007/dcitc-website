@@ -1,59 +1,64 @@
 "use client";
 import React from "react";
-import Image from "next/image";
+import Constants from "../constants";
 import { motion } from "framer-motion";
 import SectionTitle from "./UI/SectionTitle";
-import { DEMO_ACHIEVEMENTS } from "../constants";
+
+const DEMO_ACHIEVEMENTS = Constants.DEMO_ACHIEVEMENTS;
 
 const Achievements: React.FC = () => {
   return (
-    <section
-      id="achievements"
-      className="py-12 sm:py-16 md:py-24 bg-black border-t border-white/5 relative overflow-hidden"
-    >
-      <div className="max-w-full sm:max-w-6xl md:max-w-7xl mx-auto px-4 sm:px-6 md:px-6 lg:px-8">
+    <section id="achievements" className="py-24 bg-black relative">
+      <div className="max-w-7xl mx-auto px-6">
         <SectionTitle
-          title="Achievements"
-          subtitle="Highlight missions successfully executed by DCITC cadets"
+          title="Achievements Log"
+          subtitle="Our Milestones and Victories"
         />
 
-        <div className="grid gap-4 sm:gap-6 sm:grid-cols-2 md:grid-cols-3 relative z-10">
-          {DEMO_ACHIEVEMENTS.map((item, index) => (
+        <div className="space-y-12">
+          {DEMO_ACHIEVEMENTS.map((achievement, index) => (
             <motion.div
-              key={item.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1, duration: 0.5 }}
-              className="bg-dc-panel border border-white/10 p-4 sm:p-5 md:p-6 flex flex-col gap-3 hover:border-white/40 hover:-translate-y-1 sm:hover:-translate-y-2 transition-all duration-300 rounded-lg"
+              key={index}
+              initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              className={`flex flex-col md:flex-row gap-6 md:gap-10 items-start ${
+                index % 2 !== 0 ? "md:flex-row-reverse" : ""
+              }`}
             >
-              <div className="relative w-full h-32 sm:h-36 md:h-40 mb-3 overflow-hidden border border-white/10 bg-black/40 rounded-md">
-                <Image
-                  src={item.image}
-                  alt={item.title}
-                  fill
-                  className="object-cover"
-                />
+              <div className="flex-shrink-0 w-full md:w-1/3">
+                <div className="relative h-48 sm:h-64 overflow-hidden rounded-lg border border-white/10">
+                  <img
+                    src={achievement.image}
+                    alt={achievement.title}
+                    className="w-full h-full object-cover grayscale opacity-70"
+                  />
+                  <div className="absolute inset-0 bg-black/50"></div>
+                  <span className="absolute top-4 left-4 px-3 py-1 bg-white/20 text-white font-orbitron text-sm rounded-full">
+                    {achievement.year}
+                  </span>
+                </div>
               </div>
 
-              <span className="text-xs sm:text-sm font-orbitron tracking-[0.3em] text-slate-500 uppercase">
-                {item.year}
-              </span>
-
-              <h3 className="text-base sm:text-lg md:text-xl font-orbitron text-white">
-                {item.title}
-              </h3>
-
-              <p className="font-rajdhani text-sm sm:text-sm md:text-sm text-slate-400 leading-relaxed">
-                {item.detail}
-              </p>
+              <div className="flex-grow">
+                <h3 className="text-3xl font-orbitron font-bold text-white mb-2">
+                  {achievement.title}
+                </h3>
+                <p className="font-rajdhani text-slate-400 text-lg leading-relaxed mb-4">
+                  {achievement.detail}
+                </p>
+                <a
+                  href="#"
+                  className="text-white font-orbitron text-sm border-b border-white/50 hover:border-white transition-colors"
+                >
+                  View Details →
+                </a>
+              </div>
             </motion.div>
           ))}
         </div>
       </div>
-
-      {/* Radial Gradient Background */}
-      <div className="pointer-events-none absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_top,white,transparent_60%)]" />
     </section>
   );
 };
