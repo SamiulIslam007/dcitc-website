@@ -3,8 +3,11 @@ import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
-import { CLUB_NAME, MOTTO, FOUNDED } from "../constants";
+import Constants from "../constants";
 import CTAButtons from "./CTAButtons";
+
+const CLUB_NAME: string = Constants.CLUB.NAME;
+const FOUNDED: string = Constants.CLUB.FOUNDED;
 
 const Hero: React.FC = () => {
   return (
@@ -76,6 +79,7 @@ const Hero: React.FC = () => {
 
             <p className="text-slate-400 font-rajdhani text-base sm:text-lg mb-6 tracking-wide max-w-lg mx-auto px-2">
               {CLUB_NAME}
+              {/* {MOTTO} যদি ব্যবহার করতে চান */}
             </p>
 
             <CTAButtons />

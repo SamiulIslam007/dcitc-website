@@ -2,15 +2,17 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import SectionTitle from "./UI/SectionTitle";
-import {
-  LEADERSHIP_MEMBERS,
-  LEADERSHIP_SUBTITLE,
-  LEADERSHIP_EXEC_LABEL,
-  LEADERSHIP_CHIEF_LABEL,
-  LEADERSHIP_JOINT_LABEL,
-} from "../constants";
-import { LeadershipMember } from "../types";
+import SectionTitle from "../UI/SectionTitle";
+import Constants from "../../constants";
+import { LeadershipMember } from "../../types";
+
+const { LEADERSHIP } = Constants;
+const LEADERSHIP_MEMBERS: LeadershipMember[] =
+  LEADERSHIP.MEMBERS as LeadershipMember[];
+const LEADERSHIP_SUBTITLE: string = LEADERSHIP.SUBTITLE;
+const LEADERSHIP_EXEC_LABEL: string = LEADERSHIP.LABELS.EXECUTIVE;
+const LEADERSHIP_CHIEF_LABEL: string = LEADERSHIP.LABELS.CHIEF;
+const LEADERSHIP_JOINT_LABEL: string = LEADERSHIP.LABELS.JOINT;
 
 const Leadership: React.FC = () => {
   const executives = LEADERSHIP_MEMBERS.filter((m) => m.tier === "executive");
@@ -39,7 +41,7 @@ const Leadership: React.FC = () => {
     index: number;
     size?: "large" | "normal" | "small";
   }) => {
-    const sizeClasses = {
+    const sizeClasses: Record<"large" | "normal" | "small", string> = {
       large: "w-48 h-48 md:w-56 md:h-56",
       normal: "w-40 h-40 md:w-48 md:h-48",
       small: "w-36 h-36 md:w-40 md:h-40",
@@ -54,9 +56,7 @@ const Leadership: React.FC = () => {
         variants={cardVariants}
         className="group relative flex flex-col items-center"
       >
-        {}
         <div className={`relative ${sizeClasses[size]} mb-4 overflow-hidden`}>
-          {}
           <div
             className="absolute inset-0 border border-white/10 group-hover:border-white/40 transition-all duration-500 bg-linear-to-br from-white/5 to-transparent"
             style={{
@@ -65,7 +65,6 @@ const Leadership: React.FC = () => {
             }}
           ></div>
 
-          {}
           <div
             className="absolute inset-2 overflow-hidden"
             style={{
@@ -79,16 +78,13 @@ const Leadership: React.FC = () => {
               fill
               className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-110"
             />
-            {}
             <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </div>
 
-          {}
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-2 h-2 border-t border-l border-white/30 group-hover:border-white/60 transition-colors"></div>
           <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-2 h-2 border-b border-r border-white/30 group-hover:border-white/60 transition-colors"></div>
         </div>
 
-        {}
         <div className="text-center">
           <h3 className="font-orbitron text-white text-sm md:text-base font-bold tracking-wider uppercase mb-1">
             {member.name}
@@ -98,7 +94,6 @@ const Leadership: React.FC = () => {
           </p>
         </div>
 
-        {}
         <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden opacity-0 group-hover:opacity-100">
           <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-transparent via-white/20 to-transparent animate-[scan_2s_linear_infinite]"></div>
         </div>
@@ -111,7 +106,6 @@ const Leadership: React.FC = () => {
       id="leadership"
       className="py-24 bg-black relative overflow-hidden"
     >
-      {}
       <div className="absolute inset-0 opacity-5">
         <div
           className="absolute inset-0"
@@ -126,7 +120,6 @@ const Leadership: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <SectionTitle title="Leadership" subtitle={LEADERSHIP_SUBTITLE} />
 
-        {}
         <div className="mb-16">
           <motion.div
             initial={{ opacity: 0 }}
@@ -153,7 +146,6 @@ const Leadership: React.FC = () => {
           </div>
         </div>
 
-        {}
         <div className="mb-16">
           <motion.div
             initial={{ opacity: 0 }}
@@ -180,7 +172,6 @@ const Leadership: React.FC = () => {
           </div>
         </div>
 
-        {}
         {joints.length > 0 && (
           <div>
             <motion.div
@@ -210,7 +201,6 @@ const Leadership: React.FC = () => {
         )}
       </div>
 
-      {}
       <div className="absolute top-1/4 left-0 w-32 h-32 bg-white/5 blur-3xl rounded-full"></div>
       <div className="absolute bottom-1/4 right-0 w-48 h-48 bg-white/3 blur-3xl rounded-full"></div>
     </section>
