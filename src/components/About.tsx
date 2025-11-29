@@ -1,8 +1,8 @@
 import React from "react";
-import Constants from "../constants";
+import { CLUB } from "../constants";
 import SectionTitle from "./UI/SectionTitle";
 
-const MISSION_STATEMENT: string = Constants.CLUB.MISSION.STATEMENT;
+const MISSION_STATEMENT: string = CLUB.MISSION.STATEMENT;
 
 const About: React.FC = () => {
   return (

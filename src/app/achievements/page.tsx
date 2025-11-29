@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { DEMO_ACHIEVEMENTS } from "@/constants";
+import { Achievement } from "@/types";
 
 export default function AchievementsPage() {
   return (
@@ -15,7 +16,7 @@ export default function AchievementsPage() {
         </header>
 
         <div className="grid gap-6 md:grid-cols-3">
-          {DEMO_ACHIEVEMENTS.map((item) => (
+          {DEMO_ACHIEVEMENTS.map((item: Achievement) => (
             <div
               key={item.title}
               className="bg-dc-panel border border-white/10 p-6 flex flex-col gap-3 hover:border-white/40 hover:-translate-y-2 transition-all duration-300"

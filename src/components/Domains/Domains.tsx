@@ -1,11 +1,9 @@
 "use client";
 import React from "react";
-import Constants from "../../constants";
+import { DOMAINS } from "../../constants";
 import SectionTitle from "../UI/SectionTitle";
 import { motion } from "framer-motion";
 import { DomainFeature } from "../../types";
-
-const DOMAINS: DomainFeature[] = Constants.DOMAINS as DomainFeature[];
 
 const Domains: React.FC = () => {
   return (

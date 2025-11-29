@@ -1,5 +1,12 @@
 import { LucideIcon } from "lucide-react";
 
+export interface Achievement {
+  year: string;
+  title: string;
+  detail: string;
+  image: string;
+}
+
 const TYPES = {
   NavItem: {} as {
     label: string;

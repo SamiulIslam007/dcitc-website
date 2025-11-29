@@ -1,9 +1,9 @@
 import React from "react";
-import Constants from "../constants";
+import { CLUB } from "../constants";
 import { Facebook, Instagram, Linkedin, Mail } from "lucide-react";
 
-const CLUB_NAME: string = Constants.CLUB.NAME;
-const FOUNDED: string = Constants.CLUB.FOUNDED;
+const CLUB_NAME: string = CLUB.NAME;
+const FOUNDED: string = CLUB.FOUNDED;
 
 const Footer: React.FC = () => {
   const socialLinks = [
