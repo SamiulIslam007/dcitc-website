@@ -18,7 +18,7 @@ module.exports = {
         "neon-glow-lg":
           "0 0 20px 5px rgba(102, 252, 241, 0.9), 0 0 40px 10px rgba(102, 252, 241, 0.7)",
         "text-glow":
-          "0 0 2px rgba(102, 252, 241, 0.8), 0 0 5px rgba(102, 252, 241, 0.6)", // টেক্সট গ্লো
+          "0 0 2px rgba(102, 252, 241, 0.8), 0 0 5px rgba(102, 252, 241, 0.6)",
       },
       transitionTimingFunction: {
         "ease-out-cubic": "cubic-bezier(0.215, 0.610, 0.355, 1.000)",

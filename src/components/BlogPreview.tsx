@@ -9,7 +9,7 @@ const BlogPreview: React.FC = () => {
   return (
     <MotionSection
       id="intel"
-      title="Blogs"
+      title="Intel"
       subtitle="Latest Insights from the DCITC"
       className="py-24 bg-dc-dark relative"
     >
@@ -61,9 +61,9 @@ const BlogPreview: React.FC = () => {
       <div className="text-center mt-16">
         <a
           href="#"
-          className="px-8 py-3 border-2 border-white/30 text-white font-orbitron font-bold tracking-wider hover:bg-white/10 transition-colors duration-300 rounded-full"
+          className="px-8 py-3 border-2 border-white/30 text-white font-orbitron font-bold tracking-wider hover:bg-white/10 transition-colors duration-300 -skew-x-12 inline-flex"
         >
-          View All Blogs
+          View All Intel
         </a>
       </div>
     </MotionSection>

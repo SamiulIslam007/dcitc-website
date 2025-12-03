@@ -3,7 +3,6 @@ import React from "react";
 import { DEPARTMENTS } from "../../constants";
 import SectionTitle from "../UI/SectionTitle";
 import { motion } from "framer-motion";
-import { DomainFeature } from "../../types";
 
 const Departments: React.FC = () => {
   return (

@@ -9,7 +9,7 @@ const Achievements: React.FC = () => {
     <section id="achievements" className="py-24 bg-black relative">
       <div className="max-w-7xl mx-auto px-6">
         <SectionTitle
-          title="Achievements Log"
+          title="Achievements"
           subtitle="Our Milestones and Victories"
         />
 
