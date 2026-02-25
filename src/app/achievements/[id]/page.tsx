@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { createClient } from "@/lib/supabase/server";
+import { createStaticClient } from "@/lib/supabase/static";
 import { Database } from "@/lib/supabase/types";
 import { Metadata } from "next";
 
@@ -8,7 +8,7 @@ type Achievement = Database["public"]["Tables"]["achievements"]["Row"];
 
 async function getAchievement(id: string): Promise<Achievement | null> {
     try {
-        const supabase = await createClient();
+        const supabase = createStaticClient();
         const { data, error } = await supabase
             .from("achievements")
             .select("*")
@@ -25,6 +25,12 @@ async function getAchievement(id: string): Promise<Achievement | null> {
         console.error("Unexpected error:", error);
         return null;
     }
+}
+
+export async function generateStaticParams() {
+    const supabase = createStaticClient();
+    const { data: achievements } = await supabase.from("achievements").select("id");
+    return (achievements as any[])?.map((a) => ({ id: a.id.toString() })) || [];
 }
 
 export async function generateMetadata({

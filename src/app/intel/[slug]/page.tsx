@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { createClient } from "@/lib/supabase/server";
+import { createStaticClient } from "@/lib/supabase/static";
 import { Database } from "@/lib/supabase/types";
 import { Metadata } from "next";
 import ShareButtons from "@/components/ShareButtons";
@@ -9,7 +9,7 @@ type Intel = Database["public"]["Tables"]["intels"]["Row"];
 
 async function getIntelBySlug(slug: string): Promise<Intel | null> {
   try {
-    const supabase = await createClient();
+    const supabase = createStaticClient();
     const { data, error } = await supabase
       .from("intels")
       .select("*")
@@ -26,6 +26,12 @@ async function getIntelBySlug(slug: string): Promise<Intel | null> {
     console.error("Unexpected error:", error);
     return null;
   }
+}
+
+export async function generateStaticParams() {
+  const supabase = createStaticClient();
+  const { data: intels } = await supabase.from("intels").select("slug");
+  return (intels as any[])?.map((i) => ({ slug: i.slug })) || [];
 }
 
 export async function generateMetadata({
