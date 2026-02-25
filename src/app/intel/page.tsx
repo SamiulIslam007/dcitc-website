@@ -1,12 +1,12 @@
 import Image from "next/image";
-import { createClient } from "@/lib/supabase/server";
+import { createStaticClient } from "@/lib/supabase/static";
 import { Database } from "@/lib/supabase/types";
 
 type Intel = Database["public"]["Tables"]["intels"]["Row"];
 
 async function getIntels(): Promise<Intel[]> {
   try {
-    const supabase = await createClient();
+    const supabase = createStaticClient();
     const { data, error } = await supabase
       .from("intels")
       .select("*")
