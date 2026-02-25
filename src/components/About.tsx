@@ -46,21 +46,10 @@ const About: React.FC = () => {
           </div>
 
           <p className="font-rajdhani text-xl sm:text-2xl md:text-3xl lg:text-4xl text-center leading-normal sm:leading-relaxed text-slate-200 relative px-4 sm:px-6">
-            <span
-              className="text-3xl sm:text-4xl md:text-5xl font-serif text-slate-500 absolute top-0 left-0 sm:left-4 md:left-6 leading-none"
-              style={{ transform: "translateY(-0.5rem)" }}
-            >
-              "
-            </span>
+
 
             <span className="inline-block px-2">{MISSION_STATEMENT}</span>
 
-            <span
-              className="text-3xl sm:text-4xl md:text-5xl font-serif text-slate-500 absolute bottom-0 right-0 sm:right-4 md:right-6 leading-none"
-              style={{ transform: "translateY(0.5rem)" }}
-            >
-              "
-            </span>
           </p>
 
           <div className="absolute top-0 left-0 w-full h-1 bg-white/20 blur-sm animate-[scan_3s_linear_infinite] opacity-0 group-hover:opacity-100 transition-opacity"></div>

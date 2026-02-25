@@ -14,11 +14,11 @@ export const CLUB = {
 };
 
 export const NAV_ITEMS: NavItem[] = [
-  { label: "Domains", href: "#domains" },
-  { label: "Departments", href: "#departments" },
-  { label: "Leadership", href: "#leadership" },
-  { label: "Achievements", href: "#achievements" },
-  { label: "Intel", href: "#intel" },
+  { label: "Domains", href: "/#domains" },
+  { label: "Departments", href: "/#departments" },
+  { label: "Leadership", href: "/#leadership" },
+  { label: "Achievements", href: "/achievements" },
+  { label: "Intel", href: "/intel" },
 ];
 
 export const DOMAINS: DomainFeature[] = [

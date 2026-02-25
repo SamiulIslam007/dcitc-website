@@ -124,13 +124,13 @@ const Leadership: React.FC = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="flex justify-center items-center mb-8"
+            className="flex justify-center items-center mb-8 text-center"
           >
-            <div className="h-px w-16 bg-linear-to-r from-transparent to-white/30"></div>
-            <span className="px-4 font-orbitron text-xs tracking-[0.3em] text-slate-500 uppercase">
+            <div className="h-px w-8 sm:w-16 bg-linear-to-r from-transparent to-white/30"></div>
+            <span className="px-4 font-orbitron text-[10px] sm:text-xs tracking-[0.2em] sm:tracking-[0.3em] text-slate-500 uppercase">
               {LEADERSHIP_EXEC_LABEL}
             </span>
-            <div className="h-px w-16 bg-linear-to-l from-transparent to-white/30"></div>
+            <div className="h-px w-8 sm:w-16 bg-linear-to-l from-transparent to-white/30"></div>
           </motion.div>
 
           <div className="flex flex-wrap justify-center gap-8 md:gap-16">
@@ -150,13 +150,13 @@ const Leadership: React.FC = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="flex justify-center items-center mb-8"
+            className="flex justify-center items-center mb-8 text-center"
           >
-            <div className="h-px w-16 bg-linear-to-r from-transparent to-white/20"></div>
-            <span className="px-4 font-orbitron text-xs tracking-[0.3em] text-slate-600 uppercase">
+            <div className="h-px w-8 sm:w-16 bg-linear-to-r from-transparent to-white/20"></div>
+            <span className="px-4 font-orbitron text-[10px] sm:text-xs tracking-[0.2em] sm:tracking-[0.3em] text-slate-600 uppercase">
               {LEADERSHIP_CHIEF_LABEL}
             </span>
-            <div className="h-px w-16 bg-linear-to-l from-transparent to-white/20"></div>
+            <div className="h-px w-8 sm:w-16 bg-linear-to-l from-transparent to-white/20"></div>
           </motion.div>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 md:gap-10 justify-items-center">
@@ -177,13 +177,13 @@ const Leadership: React.FC = () => {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              className="flex justify-center items-center mb-8"
+              className="flex justify-center items-center mb-8 text-center"
             >
-              <div className="h-px w-16 bg-linear-to-r from-transparent to-white/10"></div>
-              <span className="px-4 font-orbitron text-xs tracking-[0.3em] text-slate-700 uppercase">
+              <div className="h-px w-8 sm:w-16 bg-linear-to-r from-transparent to-white/10"></div>
+              <span className="px-4 font-orbitron text-[10px] sm:text-xs tracking-[0.2em] sm:tracking-[0.3em] text-slate-700 uppercase">
                 {LEADERSHIP_JOINT_LABEL}
               </span>
-              <div className="h-px w-16 bg-linear-to-l from-transparent to-white/10"></div>
+              <div className="h-px w-8 sm:w-16 bg-linear-to-l from-transparent to-white/10"></div>
             </motion.div>
 
             <div className="flex flex-wrap justify-center gap-6 md:gap-10">
@@ -202,7 +202,7 @@ const Leadership: React.FC = () => {
 
       <div className="absolute top-1/4 left-0 w-32 h-32 bg-white/5 blur-3xl rounded-full"></div>
       <div className="absolute bottom-1/4 right-0 w-48 h-48 bg-white/3 blur-3xl rounded-full"></div>
-    </section>
+    </section >
   );
 };
 

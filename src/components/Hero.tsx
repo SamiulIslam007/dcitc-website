@@ -61,12 +61,7 @@ const Hero: React.FC = () => {
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
             className="text-center w-full px-4"
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1 border border-slate-700 bg-slate-900/50 rounded-full mb-4">
-              <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-              <span className="text-slate-400 text-xs font-orbitron tracking-widest">
-                EST. {FOUNDED}
-              </span>
-            </div>
+
 
             <h1 className="text-4xl sm:text-5xl font-bold font-orbitron text-white leading-tight mb-4">
               SHAPING <br />
@@ -92,12 +87,7 @@ const Hero: React.FC = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
-              <div className="inline-flex items-center gap-2 px-3 py-1 border border-slate-700 bg-slate-900/50 rounded-full mb-6">
-                <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-                <span className="text-slate-400 text-xs font-orbitron tracking-widest">
-                  EST. {FOUNDED}
-                </span>
-              </div>
+
 
               <h1 className="text-5xl lg:text-7xl font-bold font-orbitron text-white leading-tight mb-6">
                 SHAPING <br />
@@ -152,7 +142,7 @@ const Hero: React.FC = () => {
       </div>
 
       <motion.div
-        className="absolute bottom-4 sm:bottom-2 left-1/2 -translate-x-1/2 text-slate-500 flex flex-col items-center gap-2 z-30"
+        className="absolute bottom-4 sm:bottom-2 left-1/2 -translate-x-1/2 text-slate-500 hidden sm:flex flex-col items-center gap-2 z-30"
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
       >

@@ -24,17 +24,24 @@ export const metadata: Metadata = {
   description: "Official website for Dhaka College Information & Technology Club",
 };
 
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <body
-        className={`${inter.variable} ${orbitron.variable} ${rajdhani.variable} font-sans antialiased`}
+        className={`${inter.variable} ${orbitron.variable} ${rajdhani.variable} font-sans antialiased bg-black text-slate-200 selection:bg-white selection:text-black min-h-screen flex flex-col`}
       >
-        {children}
+        <Navbar />
+        <main className="grow">
+          {children}
+        </main>
+        <Footer />
       </body>
     </html>
   );
