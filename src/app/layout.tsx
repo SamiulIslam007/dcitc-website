@@ -22,6 +22,9 @@ const rajdhani = Rajdhani({
 export const metadata: Metadata = {
   title: "DCITC - Dhaka College Information & Technology Club",
   description: "Official website for Dhaka College Information & Technology Club",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 import Navbar from "@/components/Navbar";
