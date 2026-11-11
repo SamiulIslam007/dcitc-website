@@ -27,12 +27,18 @@ jobs:
           cache-dependency-path: frontend/package-lock.json
       - run: npm ci
       - run: npm run lint
+      - name: Skip deploy when Vercel credentials are missing
+        if: ${{ secrets.VERCEL_TOKEN == '' || secrets.VERCEL_PROJECT_ID == '' || secrets.VERCEL_ORG_ID == '' }}
+        run: echo "::warning::Skipping deploy because VERCEL_TOKEN, VERCEL_PROJECT_ID, or VERCEL_ORG_ID is not configured."
       - name: Link and pull project settings
+        if: ${{ secrets.VERCEL_TOKEN != '' && secrets.VERCEL_PROJECT_ID != '' && secrets.VERCEL_ORG_ID != '' }}
         run: |
           mkdir -p .vercel
           printf '{"projectId": "%s", "orgId": "%s"}\n' "${{ secrets.VERCEL_PROJECT_ID }}" "${{ secrets.VERCEL_ORG_ID }}" > .vercel/project.json
           npx vercel pull --yes --environment=production --token "${{ secrets.VERCEL_TOKEN }}"
       - name: Build prebuilt output
+        if: ${{ secrets.VERCEL_TOKEN != '' && secrets.VERCEL_PROJECT_ID != '' && secrets.VERCEL_ORG_ID != '' }}
         run: npx vercel build --prod --token "${{ secrets.VERCEL_TOKEN }}"
       - name: Deploy to Vercel (production)
+        if: ${{ secrets.VERCEL_TOKEN != '' && secrets.VERCEL_PROJECT_ID != '' && secrets.VERCEL_ORG_ID != '' }}
         run: npx vercel deploy --prebuilt --prod --yes --token "${{ secrets.VERCEL_TOKEN }}" 2>&1 | tee deploy-url.log
